@@ -146,15 +146,20 @@ body {
   }
 }
 
-/* 다국어 입력 지원 배지: 반투명 보라 배경, 둥근 모서리, 진한 노란색 텍스트 */
+/* 다국어 입력 지원 배지: 그라데이션 검은색 배경 (다른 배경 규칙 없음) */
 .badge-multilang {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
   border-radius: 9999px;
-  background: rgba(139, 92, 246, 0.35);
-  border: 1px solid rgba(139, 92, 246, 0.45);
+  background: linear-gradient(
+    145deg,
+    #222 0%,
+    #0a0a0a 45%,
+    #181818 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 13px;
   font-weight: 500;
   color: #facc15;
@@ -312,13 +317,13 @@ textarea {
   letter-spacing: -0.015em;
 }
 
-/* 버튼: Pretendard/Inter, font-semibold, 텍스트 정중앙 정렬 */
+/* 버튼: 현재 너비의 약 1/4 크기로 축소 */
 .primary-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
-  padding: 0 24px;
+  height: 40px;
+  padding: 0 14px;
   border-radius: 9999px;
   background: linear-gradient(
     90deg,
@@ -329,15 +334,15 @@ textarea {
   color: #fff;
   font-family: var(--font-inter), "Pretendard Variable", Inter, sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.875rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
 }
 
 @media (min-width: 768px) {
   .primary-btn {
-    height: 52px;
-    padding: 0 28px;
+    height: 42px;
+    padding: 0 16px;
   }
 }
 
@@ -347,27 +352,45 @@ textarea {
   opacity: 1;
 }
 
-/* 우측 상단 언어 선택: btn-dream 스타일 (보라 그라데이션, 둥근 모서리) */
+/* 우측 상단 언어 선택: 그라데이션 검은색 배경 + 입체감 */
 .btn-dream-wrapper {
   display: inline-flex;
   align-items: center;
   border-radius: 9999px;
   background: linear-gradient(
-    90deg,
-    #9333ea 0%,
-    #a855f7 30%,
-    #eab308 100%
+    145deg,
+    #1a1a1a 0%,
+    #0a0a0a 50%,
+    #111 100%
   );
   padding: 2px;
-  box-shadow: 0 0 16px rgba(147, 51, 234, 0.35);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-dream-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
 }
 
 .locale-select {
   appearance: none;
-  background: transparent;
   border: none;
   outline: none;
-  color: #fff;
   font-weight: 600;
   font-size: 0.875rem;
   padding: 8px 14px 8px 16px;
@@ -377,6 +400,20 @@ textarea {
   border-radius: 9999px;
   text-align: center;
   text-align-last: center;
+  background: transparent;
+  background-image: linear-gradient(90deg, #eab308 0%, #facc15 40%, #a78bfa 70%, #9333ea 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.locale-select option {
+  background: #1a1a2e;
+  color: #f5f5f7;
+  -webkit-text-fill-color: initial;
 }
 
 @media (min-width: 640px) {
@@ -385,11 +422,6 @@ textarea {
     padding: 6px 12px 6px 14px;
     min-height: 32px;
   }
-}
-
-.locale-select option {
-  background: #1a1a2e;
-  color: #f5f5f7;
 }
 
 /* 결과창: 내어쓰기(Hanging Indent) */

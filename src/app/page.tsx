@@ -15,7 +15,9 @@ function formatResultText(text: string): string {
     .replace(/\*([^*]+)\*/g, "$1")
     .replace(/^\s*\*\s+/gm, "• ")
     .replace(/^\s*-\s+/gm, "• ")
-    .replace(/\*/g, "");
+    .replace(/\*/g, "")
+    .replace(/\n*---+\n*/g, "\n")
+    .replace(/^\-+\s*$/gm, "");
 }
 
 function parseResultWithHangingIndent(text: string): ReactNode {
@@ -43,13 +45,15 @@ function parseResultWithHangingIndent(text: string): ReactNode {
         </div>
       );
     } else {
-      if (line.trim()) {
+      const trimmed = line.trim();
+      const isDashesOnly = /^\-+$/.test(trimmed);
+      if (trimmed && !isDashesOnly) {
         nodes.push(
           <p key={`p-${i}`} className="result-p">
             {line}
           </p>
         );
-      } else if (nodes.length > 0) {
+      } else if (!isDashesOnly && nodes.length > 0) {
         nodes.push(<br key={`br-${i}`} />);
       }
       i++;
@@ -176,7 +180,7 @@ export default function Home() {
               type="button"
               onClick={analyzeDream}
               disabled={loading || !dream.trim()}
-              className="primary-btn shrink-0 disabled:opacity-50 disabled:pointer-events-none order-1 sm:order-2 w-full sm:w-auto min-h-[48px] sm:min-h-0 touch-manipulation dream-font"
+              className="primary-btn shrink-0 disabled:opacity-50 disabled:pointer-events-none order-1 sm:order-2 w-full sm:w-auto min-h-[40px] sm:min-h-0 touch-manipulation dream-font"
             >
               {loading ? t.buttonLoading : t.button}
             </button>
