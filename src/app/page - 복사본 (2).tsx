@@ -23,7 +23,7 @@ function formatResultText(text: string): string {
 function parseResultWithHangingIndent(text: string): ReactNode {
   const formatted = formatResultText(text);
   const lines = formatted.split("\n");
-  const nodes: ReactNode[] = [];
+  const nodes: React.ReactNode[] = [];
   let i = 0;
 
   while (i < lines.length) {
@@ -125,8 +125,11 @@ export default function Home() {
 
       <main className="ui-layer w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-16 lg:py-24 space-y-12 sm:space-y-16 md:space-y-20">
         <section className="text-center space-y-4 sm:space-y-6">
-          <div className="flex justify-end items-start -mt-2 mb-2">
-            {/* 좌측 상단 버전 정보 삭제 완료 */}
+          <div className="flex justify-between items-start -mt-2 mb-2">
+            {/* [수정] 버전 정보를 왼쪽 상단에 배치 (kkhafrog v1.0) */}
+            <span className="text-[12px] opacity-40 font-mono tracking-wider ml-1">
+              {t.brand}
+            </span>
             <div className="btn-dream-wrapper">
               <select
                 value={locale}
@@ -144,6 +147,7 @@ export default function Home() {
           </div>
           <h1 className="h1-hero">{t.title}</h1>
           <div className="flex flex-wrap items-center justify-between gap-3 text-left">
+            {/* 설명 문구 (desc 클래스) */}
             <p className="desc flex-1 min-w-0">{t.description}</p>
             <span className="badge-multilang shrink-0">{t.badge}</span>
           </div>
@@ -155,7 +159,7 @@ export default function Home() {
             <p className="hint mt-1">{t.hint}</p>
           </div>
 
-          <div className="textarea-neon p-4 flex flex-col">
+          <div className="textarea-neon p-4 sm:p-4 flex flex-col">
             <textarea
               value={dream}
               onChange={(e) => setDream(e.target.value)}
@@ -169,15 +173,28 @@ export default function Home() {
             </div>
           </div>
 
-          {error && <p className="hint text-red-400 text-[13px]">{error}</p>}
+          {error && (
+            <p className="hint text-red-400" style={{ fontSize: "13px" }}>
+              {error}
+            </p>
+          )}
 
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6">
             <span className="hint order-2 sm:order-1">{t.disclaimer}</span>
+            {/* [수정] 버튼 글씨 크기를 설명 문구(desc)와 동일하게 키움 (px-8, py-4, text-[16px]) */}
             <button
               type="button"
               onClick={analyzeDream}
               disabled={loading || !dream.trim()}
-              className="primary-btn shrink-0 disabled:opacity-50 disabled:pointer-events-none order-1 sm:order-2 w-full sm:w-auto touch-manipulation dream-font text-[16px] py-[14px] px-[32px] min-w-[180px]"
+              className="primary-btn shrink-0 disabled:opacity-50 disabled:pointer-events-none order-1 sm:order-2 w-full sm:w-auto touch-manipulation dream-font"
+              style={{ 
+                fontSize: "16px", 
+                paddingLeft: "32px", 
+                paddingRight: "32px", 
+                paddingTop: "14px", 
+                paddingBottom: "14px",
+                minWidth: "180px"
+              }}
             >
               {loading ? t.buttonLoading : t.button}
             </button>
@@ -186,6 +203,7 @@ export default function Home() {
 
         <section className="panel p-5 sm:p-6 md:p-8">
           <h2 className="section-title mb-4">{t.resultTitle}</h2>
+
           {!result ? (
             <p className="text-placeholder-same">{t.resultPlaceholder}</p>
           ) : (
@@ -195,7 +213,7 @@ export default function Home() {
           )}
         </section>
 
-        {/* 버전 정보는 하단 푸터에만 유지 */}
+        {/* [추가] 하단 푸터 영역에도 버전 정보를 한 번 더 노출 (선택 사항) */}
         <footer className="text-center pb-10">
           <p className="text-[11px] opacity-20 font-mono tracking-tighter">
             © 2026 {t.brand}

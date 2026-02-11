@@ -65,8 +65,8 @@ const localeContent = {
       "(예시) 새벽 3시쯤 끝없이 이어진 보라색 숲길을 혼자 걷고 있었어요. 나무 사이사이에서 금빛 불꽃이 천천히 떠올랐고, 멀리서 누군가 제 이름을 부르는 소리가 들렸어요...",
     badge: "다국어 입력 지원",
     disclaimer:
-      "해석은 참고용일 뿐이며, 사용자의 현재 마음 상태를 이해하는 데 초점을 맞춤니다.",
-    button: "꿈 분석하기", // 설명 문구와 동일한 중요도로 강조
+      "해석은 참고용일 뿐이며, 사용자의 현재 마음 상태를 이해하는 데 초점을 맞춥니다.",
+    button: "꿈 분석하기",
     buttonLoading: "분석 중…",
     resultTitle: "꿈 해석 결과",
     resultPlaceholder:
@@ -106,13 +106,13 @@ const localeContent = {
   ja: {
     label: "日本語",
     brand: "kkhafrog v1.0",
-    title: "あなたの夢를 丁寧に解釈します",
+    title: "あなたの夢を丁寧に解釈します", // '를' -> 'を' 교정 완료
     description:
-      "世界中どこでも、いつでも。夜に見た夢를書いてください。象徴と感情を中心に、優しく読み解きます。",
+      "世界中どこでも、いつでも。夜に見た夢を書いてください。象徴と感情を中心に、優しく読み解きます。", // '를' -> 'を' 교정 완료
     sectionTitle: "夢の内容を自由に書いてください",
     hint: "いつ、どこで、誰と一緒だったか、思い出せる場面をできるだけ詳しく書くほど、分析が豊かになります。",
     placeholder:
-      "（例）真夜中3時頃、果てしなく続く紫の森を一人で歩いていました。木々の間から金色の炎がゆっくりと浮かび上がり、遠くで誰かが私の名前を呼ぶ声が聞こえました...",
+      "（例）真夜中3時頃、果てしなく続く紫の森を一人で歩いていました。木々の間から金色の炎がゆっくりと浮かび上がり、遠くで誰かが私の名前를呼ぶ声が聞こえました...",
     badge: "多言語入力対応",
     disclaimer:
       "解釈は参考用であり、現在の心の状態を理解することに焦点を当てています。",
@@ -124,7 +124,7 @@ const localeContent = {
     chars: (n: number) => `${n}文字`,
     errors: {
       analyzeFailed: "分析リクエストに失敗しました。",
-      noResult: "結果を読み込めませんでした。",
+      noResult: "結果를読み込めませんでした。",
       network: "ネットワークエラーが発生しました。",
     },
   },
@@ -234,7 +234,7 @@ const localeContent = {
     description:
       "Di mana pun Anda berada, kapan pun. Tuliskan mimpi yang Anda alami semalam, dan kami akan membantu Anda menguraikan simbol-simbolnya dengan lembut.",
     sectionTitle: "Tulis mimpi Anda secara bebas",
-    hint: "Semakin detail - kapan, di mana, con siapa, apa yang Anda ingat - semakin kaya analisisnya.",
+    hint: "Semakin detail - kapan, di mana, dengan siapa, apa yang Anda ingat - semakin kaya analisisnya.",
     placeholder:
       "(Contoh) Sekitar jam 3 pagi, saya berjalan sendirian melalui hutan ungu yang tak berujung. Api emas perlahan naik di antara pepohonan, dan saya mendengar seseorang memanggil nama saya dari jauh...",
     badge: "Multibahasa",
@@ -244,7 +244,7 @@ const localeContent = {
     buttonLoading: "Menganalisis…",
     resultTitle: "Hasil Tafsiran Mimpi",
     resultPlaceholder:
-      "Masukkan mimpi di atas dan nhấn 'Analisis Mimpi'. Hasilnya akan muncul di sini.",
+      "Masukkan mimpi di atas dan tekan 'Analisis Mimpi'. Hasilnya akan muncul di sini.",
     chars: (n: number) => `${n} karakter`,
     errors: {
       analyzeFailed: "Permintaan analisis gagal.",

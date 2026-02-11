@@ -55,6 +55,7 @@ export function isRTL(locale: Locale): boolean {
 const localeContent = {
   ko: {
     label: "한국어",
+    brand: "kkhafrog v1.0",
     title: "당신의 꿈을 섬세하게 해석해 드려요",
     description:
       "전 세계 어디서든, 어느 시간대든, 밤사이 꾸었던 꿈을 적어 주시면 상징과 감정을 중심으로 부드럽게 풀어 드립니다.",
@@ -79,6 +80,7 @@ const localeContent = {
   },
   en: {
     label: "English",
+    brand: "kkhafrog v1.0",
     title: "Interpreting Your Dreams with Care",
     description:
       "Wherever you are, whenever it is. Write down the dream you had last night, and we will gently unpack its symbols and emotions for you.",
@@ -103,30 +105,32 @@ const localeContent = {
   },
   ja: {
     label: "日本語",
+    brand: "kkhafrog v1.0",
     title: "あなたの夢を丁寧に解釈します",
     description:
-      "世界中どこでも、いつでも。夜に見た夢を書いてください。象徴と感情を中心に、優しく読み解きます。",
+      "世界中のどこでも、いつでも。夜に見た夢を書き留めてください。象徴と感情を中心に、優しく読み解きます。",
     sectionTitle: "夢の内容を自由に書いてください",
-    hint: "いつ、どこで、誰と一緒だったか、思い出せる場面をできるだけ詳しく書くほど、分析が豊かになります。",
+    hint: "いつ、どこで、誰といたか、思い出せる場面をできるだけ詳しく書くほど、分析がより豊かになります。",
     placeholder:
-      "（例）真夜中3時頃、果てしなく続く紫の森を一人で歩いていました。木々の間から金色の炎がゆっくりと浮かび上がり、遠くで誰かが私の名前を呼ぶ声が聞こえました...",
+      "（例）深夜3時頃、果てしなく続く紫色の森を一人で歩いていました。木々の間から黄金の炎がゆっくりと浮かび上がり、遠くから誰かが私の名前を呼ぶ声が聞こえました...",
     badge: "多言語入力対応",
     disclaimer:
       "解釈は参考用であり、現在の心の状態を理解することに焦点を当てています。",
-    button: "夢を分析",
+    button: "夢を分析する",
     buttonLoading: "分析中…",
-    resultTitle: "夢解釈結果",
+    resultTitle: "夢の解釈結果",
     resultPlaceholder:
-      "上に夢の内容を入力し、「夢を分析」ボタンを押すと、整理した夢の解釈結果がここに表示されます。",
+      "上に夢の内容を入力して「夢を分析する」ボタンを押すと、こちらに解釈結果が表示されます。",
     chars: (n: number) => `${n}文字`,
     errors: {
       analyzeFailed: "分析リクエストに失敗しました。",
-      noResult: "結果を読み込めませんでした。",
+      noResult: "結果を取得できませんでした。",
       network: "ネットワークエラーが発生しました。",
     },
   },
   zh: {
     label: "简体中文",
+    brand: "kkhafrog v1.0",
     title: "为您悉心解读梦境",
     description:
       "无论何时何地。只需写下您昨夜的梦境，我们将结合象征与情感，为您带来温柔的解惑。",
@@ -150,6 +154,7 @@ const localeContent = {
   },
   ar: {
     label: "العربية",
+    brand: "kkhafrog v1.0",
     title: "تفسير أحلامك بدقة",
     description:
       "أينما كنت، ومتى كان ذلك. اكتب الحلم الذي رأيته الليلة الماضية، وسنقوم بفك رموزه وعواطفه بلطف من أجلك.",
@@ -174,6 +179,7 @@ const localeContent = {
   },
   vi: {
     label: "Tiếng Việt",
+    brand: "kkhafrog v1.0",
     title: "Giải mã giấc mơ của bạn",
     description:
       "Dù bạn ở đâu, bất cứ lúc nào. Hãy viết ra giấc mơ đêm qua, và chúng tôi sẽ nhẹ nhàng giúp bạn hiểu biểu tượng và cảm xúc trong đó.",
@@ -198,6 +204,7 @@ const localeContent = {
   },
   th: {
     label: "ไทย",
+    brand: "kkhafrog v1.0",
     title: "ตีความความฝันของคุณอย่างละเอียด",
     description:
       "ไม่ว่าคุณจะอยู่ที่ไหน เมื่อไหร่ เขียนความฝันที่คุณฝันเมื่อคืน และเราจะช่วยตีความสัญลักษณ์และอารมณ์ให้คุณอย่างอ่อนโยน",
@@ -222,6 +229,7 @@ const localeContent = {
   },
   id: {
     label: "Bahasa Indonesia",
+    brand: "kkhafrog v1.0",
     title: "Menafsirkan Mimpi Anda dengan Saksama",
     description:
       "Di mana pun Anda berada, kapan pun. Tuliskan mimpi yang Anda alami semalam, dan kami akan membantu Anda menguraikan simbol-simbolnya dengan lembut.",
@@ -246,6 +254,7 @@ const localeContent = {
   },
   ru: {
     label: "Русский",
+    brand: "kkhafrog v1.0",
     title: "Интерпретация ваших снов",
     description:
       "Где бы вы ни были, когда бы ни было. Запишите сон, который вам приснился прошлой ночью, и мы бережно расшифруем его символы и эмоции для вас.",
@@ -270,6 +279,7 @@ const localeContent = {
   },
   fr: {
     label: "Français",
+    brand: "kkhafrog v1.0",
     title: "Interprétation de vos rêves avec soin",
     description:
       "Où que vous soyez, à tout moment. Notez le rêve que vous avez fait la nuit dernière, et nous déroulerons doucement ses symboles et émotions pour vous.",
@@ -294,6 +304,7 @@ const localeContent = {
   },
   de: {
     label: "Deutsch",
+    brand: "kkhafrog v1.0",
     title: "Ihre Träume einfühlsam gedeutet",
     description:
       "Egal wo Sie sind, egal zu welcher Zeit. Beschreiben Sie Ihren Traum der letzten Nacht, und wir werden Symbole und Emotionen behutsam für Sie entschlüsseln.",
@@ -318,6 +329,7 @@ const localeContent = {
   },
   hi: {
     label: "हिन्दी",
+    brand: "kkhafrog v1.0",
     title: "आपके सपनों की गहराई से व्याख्या",
     description:
       "आप कहीं भी हों, किसी भी समय। पिछली रात आपने जो सपना देखा था उसे लिखें, और हम आपके लिए उसके प्रतीकों और भावनाओं को सहजता से समझाएंगे।",

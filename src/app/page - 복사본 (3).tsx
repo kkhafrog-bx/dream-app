@@ -125,8 +125,11 @@ export default function Home() {
 
       <main className="ui-layer w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-16 lg:py-24 space-y-12 sm:space-y-16 md:space-y-20">
         <section className="text-center space-y-4 sm:space-y-6">
-          <div className="flex justify-end items-start -mt-2 mb-2">
-            {/* 좌측 상단 버전 정보 삭제 완료 */}
+          <div className="flex justify-between items-start -mt-2 mb-2">
+            {/* 브랜드 및 버전 노출 부분 */}
+            <span className="text-[12px] opacity-40 font-mono tracking-wider ml-1">
+              {t.brand}
+            </span>
             <div className="btn-dream-wrapper">
               <select
                 value={locale}
@@ -173,6 +176,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6">
             <span className="hint order-2 sm:order-1">{t.disclaimer}</span>
+            {/* 버튼 크기를 설명 문구(desc)와 동일한 16px로 키우고 패딩 조절 */}
             <button
               type="button"
               onClick={analyzeDream}
@@ -195,7 +199,6 @@ export default function Home() {
           )}
         </section>
 
-        {/* 버전 정보는 하단 푸터에만 유지 */}
         <footer className="text-center pb-10">
           <p className="text-[11px] opacity-20 font-mono tracking-tighter">
             © 2026 {t.brand}
