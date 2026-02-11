@@ -8,9 +8,7 @@ export type Locale =
   | "th"
   | "id"
   | "ru"
-  | "fr"
-  | "de"
-  | "hi";
+  | "fr";
 
 export const SUPPORTED_LOCALES: Locale[] = [
   "ko",
@@ -23,8 +21,6 @@ export const SUPPORTED_LOCALES: Locale[] = [
   "id",
   "ru",
   "fr",
-  "de",
-  "hi",
 ];
 
 export function detectBrowserLocale(): Locale {
@@ -42,8 +38,6 @@ export function detectBrowserLocale(): Locale {
     id: "id",
     ru: "ru",
     fr: "fr",
-    de: "de",
-    hi: "hi",
   };
   return map[code] ?? "en";
 }
@@ -55,9 +49,9 @@ export function isRTL(locale: Locale): boolean {
 const localeContent = {
   ko: {
     label: "한국어",
-    title: "당신의 꿈을 섬세하게 해석해 드려요",
+    title: "당신의 꿈을 AI가 섬세하게 해석해요",
     description:
-      "전 세계 어디서든, 어느 시간대든, 밤사이 꾸었던 꿈을 적어 주시면 상징과 감정을 중심으로 부드럽게 풀어 드립니다.",
+      "전 세계 어디서든, 어느 시간대든. 밤사이 꾸었던 꿈을 적어 주시면 AI가 상징과 감정을 중심으로 부드럽게 풀어 드립니다.",
     sectionTitle: "꿈 내용을 자유롭게 적어 주세요",
     hint: "언제, 어디서, 누구와 있었는지, 기억나는 장면을 최대한 자세히 써 줄수록 분석이 더 풍부해져요.",
     placeholder:
@@ -67,9 +61,9 @@ const localeContent = {
       "해석은 참고용일 뿐이며, 사용자의 현재 마음 상태를 이해하는 데 초점을 맞춥니다.",
     button: "꿈 분석하기",
     buttonLoading: "분석 중…",
-    resultTitle: "꿈 해석 결과",
+    resultTitle: "AI 꿈 해석 결과",
     resultPlaceholder:
-      "위에 꿈 내용을 적고 '꿈 분석하기' 버튼을 누르면, 이곳에 정리한 꿈 해석 결과가 나타납니다.",
+      "위에 꿈 내용을 적고 '꿈 분석하기' 버튼을 누르면, 이곳에 AI가 정리한 꿈 해석 결과가 나타납니다.",
     chars: (n: number) => `${n}자`,
     errors: {
       analyzeFailed: "분석 요청에 실패했습니다.",
@@ -79,9 +73,9 @@ const localeContent = {
   },
   en: {
     label: "English",
-    title: "Interpreting Your Dreams with Care",
+    title: "AI Interprets Your Dreams with Care",
     description:
-      "Wherever you are, whenever it is. Write down the dream you had last night, and we will gently unpack its symbols and emotions for you.",
+      "Wherever you are, whenever it is. Write down the dream you had last night, and AI will gently unpack its symbols and emotions for you.",
     sectionTitle: "Write your dream freely",
     hint: "The more detail you provide—when, where, who you were with, and what you remember—the richer the analysis will be.",
     placeholder:
@@ -91,9 +85,9 @@ const localeContent = {
       "Interpretations are for reference only, focusing on understanding your current state of mind.",
     button: "Analyze Dream",
     buttonLoading: "Analyzing…",
-    resultTitle: "Dream Interpretation Result",
+    resultTitle: "AI Dream Interpretation",
     resultPlaceholder:
-      "Enter your dream above and press 'Analyze Dream'. Your interpreted result will appear here.",
+      "Enter your dream above and press 'Analyze Dream'. Your AI-interpreted result will appear here.",
     chars: (n: number) => `${n} chars`,
     errors: {
       analyzeFailed: "Analysis request failed.",
@@ -103,21 +97,21 @@ const localeContent = {
   },
   ja: {
     label: "日本語",
-    title: "あなたの夢を丁寧に解釈します",
+    title: "AIがあなたの夢を丁寧に解釈します",
     description:
-      "世界中どこでも、いつでも。夜に見た夢を書いてください。象徴と感情を中心に、優しく読み解きます。",
+      "世界中どこでも、いつでも。夜に見た夢を書いてください。AIが象徴と感情を中心に、優しく読み解きます。",
     sectionTitle: "夢の内容を自由に書いてください",
     hint: "いつ、どこで、誰と一緒だったか、思い出せる場面をできるだけ詳しく書くほど、分析が豊かになります。",
     placeholder:
       "（例）真夜中3時頃、果てしなく続く紫の森を一人で歩いていました。木々の間から金色の炎がゆっくりと浮かび上がり、遠くで誰かが私の名前を呼ぶ声が聞こえました...",
     badge: "多言語入力対応",
     disclaimer:
-      "解釈は参考用であり、現在の心の状態を理解することに焦点を当てています。",
+      "解釈は参考用であり、あなたの現在の心の状態を理解することに焦点を当てています。",
     button: "夢を分析",
     buttonLoading: "分析中…",
-    resultTitle: "夢解釈結果",
+    resultTitle: "AI夢解釈結果",
     resultPlaceholder:
-      "上に夢の内容を入力し、「夢を分析」ボタンを押すと、整理した夢の解釈結果がここに表示されます。",
+      "上に夢の内容を入力し、「夢を分析」ボタンを押すと、AIが整理した夢の解釈結果がここに表示されます。",
     chars: (n: number) => `${n}文字`,
     errors: {
       analyzeFailed: "分析リクエストに失敗しました。",
@@ -126,33 +120,33 @@ const localeContent = {
     },
   },
   zh: {
-    label: "简体中文",
-    title: "为您悉心解读梦境",
+    label: "中文",
+    title: "AI 悉心解读您的梦境",
     description:
-      "无论何时何地。只需写下您昨夜的梦境，我们将结合象征与情感，为您带来温柔的解惑。",
-    sectionTitle: "请自由描述您的梦境",
-    hint: "描写得越详细（如时间、地点、人物及难忘的场景），解析结果就会越丰富。",
+      "无论何时何地。写下您昨夜所做的梦，AI 将围绕象征与情感，为您温柔地解读。",
+    sectionTitle: "请自由书写梦境内容",
+    hint: "写得越详细——何时、何地、与谁在一起、记得的场景——分析就越丰富。",
     placeholder:
-      "（例如）凌晨3点左右，我独自走在一条无尽的紫色森林小路上。树木间缓缓升起金色的火焰，远处隐约听到有人在呼唤我的名字...",
-    badge: "支持多语言输入",
-    disclaimer: "解读结果仅供参考，旨在帮助您更好地理解当前的心理状态。",
-    button: "开始解析梦境",
-    buttonLoading: "解析中...",
-    resultTitle: "梦境解析结果",
+      "（示例）凌晨3点左右，我独自走在无尽的紫色森林里。金色的火焰在树木间缓缓升起，远处传来有人呼唤我名字的声音...",
+    badge: "多语言输入支持",
+    disclaimer: "解读仅供参考，着重于理解您当前的心理状态。",
+    button: "解读梦境",
+    buttonLoading: "解读中…",
+    resultTitle: "AI 梦境解读结果",
     resultPlaceholder:
-      "在上方输入梦境内容并点击“开始解析梦境”按钮，此处将为您展示整理后的解析结果。",
+      "在上方输入梦境内容并点击「解读梦境」按钮，AI 整理后的解读结果将显示在此处。",
     chars: (n: number) => `${n}字`,
     errors: {
-      analyzeFailed: "解析请求失败。",
-      noResult: "无法获取解析结果。",
+      analyzeFailed: "解读请求失败。",
+      noResult: "无法加载结果。",
       network: "发生网络错误。",
     },
   },
   ar: {
     label: "العربية",
-    title: "تفسير أحلامك بدقة",
+    title: "AI يفسر أحلامك بدقة",
     description:
-      "أينما كنت، ومتى كان ذلك. اكتب الحلم الذي رأيته الليلة الماضية، وسنقوم بفك رموزه وعواطفه بلطف من أجلك.",
+      "أينما كنت، ومتى كان ذلك. اكتب الحلم الذي رأيته الليلة الماضية، وسيقوم الذكاء الاصطناعي بفك رموزه وعواطفه بلطف من أجلك.",
     sectionTitle: "اكتب حلمك بحرية",
     hint: "كلما زادت التفاصيل التي تقدمها - متى وأين ومع من كنت وما تتذكره - أصبح التحليل أغنى.",
     placeholder:
@@ -162,7 +156,7 @@ const localeContent = {
       "التفسيرات للمرجعية فقط، وتركز على فهم حالتك الذهنية الحالية.",
     button: "تحليل الحلم",
     buttonLoading: "جاري التحليل…",
-    resultTitle: "نتيجة تفسير الحلم",
+    resultTitle: "تفسير الحلم بالذكاء الاصطناعي",
     resultPlaceholder:
       "أدخل حلمك أعلاه واضغط على 'تحليل الحلم'. ستظهر النتيجة هنا.",
     chars: (n: number) => `${n} حرف`,
@@ -174,9 +168,9 @@ const localeContent = {
   },
   vi: {
     label: "Tiếng Việt",
-    title: "Giải mã giấc mơ của bạn",
+    title: "AI giải mã giấc mơ của bạn",
     description:
-      "Dù bạn ở đâu, bất cứ lúc nào. Hãy viết ra giấc mơ đêm qua, và chúng tôi sẽ nhẹ nhàng giúp bạn hiểu biểu tượng và cảm xúc trong đó.",
+      "Dù bạn ở đâu, bất cứ lúc nào. Hãy viết ra giấc mơ đêm qua, và AI sẽ nhẹ nhàng giúp bạn hiểu biểu tượng và cảm xúc trong đó.",
     sectionTitle: "Viết giấc mơ của bạn tự do",
     hint: "Càng chi tiết - khi nào, ở đâu, cùng ai, bạn nhớ gì - thì phân tích càng phong phú.",
     placeholder:
@@ -186,7 +180,7 @@ const localeContent = {
       "Giải thích chỉ mang tính tham khảo, tập trung vào việc hiểu trạng thái tâm lý hiện tại của bạn.",
     button: "Phân tích giấc mơ",
     buttonLoading: "Đang phân tích…",
-    resultTitle: "Kết quả giải mã giấc mơ",
+    resultTitle: "Kết quả giải mã giấc mơ bằng AI",
     resultPlaceholder:
       "Nhập giấc mơ ở trên và nhấn 'Phân tích giấc mơ'. Kết quả sẽ hiển thị tại đây.",
     chars: (n: number) => `${n} ký tự`,
@@ -198,9 +192,9 @@ const localeContent = {
   },
   th: {
     label: "ไทย",
-    title: "ตีความความฝันของคุณอย่างละเอียด",
+    title: "AI ตีความความฝันของคุณอย่างละเอียด",
     description:
-      "ไม่ว่าคุณจะอยู่ที่ไหน เมื่อไหร่ เขียนความฝันที่คุณฝันเมื่อคืน และเราจะช่วยตีความสัญลักษณ์และอารมณ์ให้คุณอย่างอ่อนโยน",
+      "ไม่ว่าคุณจะอยู่ที่ไหน เมื่อไหร่ เขียนความฝันที่คุณฝันเมื่อคืน และ AI จะช่วย unpack สัญลักษณ์และอารมณ์ให้คุณอย่างอ่อนโยน",
     sectionTitle: "เขียนความฝันของคุณอย่างอิสระ",
     hint: "ยิ่งรายละเอียดมาก เมื่อไหร่ ที่ไหน กับใคร คุณจำอะไรได้บ้าง การวิเคราะห์ยิ่งสมบูรณ์",
     placeholder:
@@ -210,7 +204,7 @@ const localeContent = {
       "การตีความใช้เพื่ออ้างอิงเท่านั้น มุ่งเน้นการเข้าใจสภาวะจิตใจปัจจุบันของคุณ",
     button: "วิเคราะห์ความฝัน",
     buttonLoading: "กำลังวิเคราะห์…",
-    resultTitle: "ผลการตีความความฝัน",
+    resultTitle: "ผลการตีความความฝันด้วย AI",
     resultPlaceholder:
       "กรอกความฝันด้านบนแล้วกดปุ่ม 'วิเคราะห์ความฝัน' ผลลัพธ์จะแสดงที่นี่",
     chars: (n: number) => `${n} อักขระ`,
@@ -222,21 +216,21 @@ const localeContent = {
   },
   id: {
     label: "Bahasa Indonesia",
-    title: "Menafsirkan Mimpi Anda dengan Saksama",
+    title: "AI Menafsirkan Mimpi Anda dengan Saksama",
     description:
-      "Di mana pun Anda berada, kapan pun. Tuliskan mimpi yang Anda alami semalam, dan kami akan membantu Anda menguraikan simbol-simbolnya dengan lembut.",
+      "Di mana pun Anda berada, kapan pun. Tuliskan mimpi yang Anda alami semalam, dan AI akan dengan lembut menguraikan simbol dan emosinya untuk Anda.",
     sectionTitle: "Tulis mimpi Anda secara bebas",
     hint: "Semakin detail - kapan, di mana, dengan siapa, apa yang Anda ingat - semakin kaya analisisnya.",
     placeholder:
       "(Contoh) Sekitar jam 3 pagi, saya berjalan sendirian melalui hutan ungu yang tak berujung. Api emas perlahan naik di antara pepohonan, dan saya mendengar seseorang memanggil nama saya dari jauh...",
     badge: "Multibahasa",
     disclaimer:
-      "Tafsiran hanya sebagai referensi, berfokus pada pemahaman keadaan pikiran Anda saat ini.",
+      "Tafsiran hanya untuk referensi, fokus pada pemahaman keadaan pikiran Anda saat ini.",
     button: "Analisis Mimpi",
     buttonLoading: "Menganalisis…",
-    resultTitle: "Hasil Tafsiran Mimpi",
+    resultTitle: "Hasil Tafsiran Mimpi AI",
     resultPlaceholder:
-      "Masukkan mimpi di atas dan tekan 'Analisis Mimpi'. Hasilnya akan muncul di sini.",
+      "Masukkan mimpi di atas dan tekan 'Analisis Mimpi'. Hasil akan muncul di sini.",
     chars: (n: number) => `${n} karakter`,
     errors: {
       analyzeFailed: "Permintaan analisis gagal.",
@@ -246,9 +240,9 @@ const localeContent = {
   },
   ru: {
     label: "Русский",
-    title: "Интерпретация ваших снов",
+    title: "AI интерпретирует ваши сны",
     description:
-      "Где бы вы ни были, когда бы ни было. Запишите сон, который вам приснился прошлой ночью, и мы бережно расшифруем его символы и эмоции для вас.",
+      "Где бы вы ни были, когда бы ни было. Запишите сон, который вам приснился прошлой ночью, и ИИ бережно расшифрует его символы и эмоции для вас.",
     sectionTitle: "Опишите ваш сон свободно",
     hint: "Чем больше деталей — когда, где, с кем вы были, что помните — тем богаче анализ.",
     placeholder:
@@ -258,7 +252,7 @@ const localeContent = {
       "Интерпретации носят справочный характер и сосредоточены на понимании вашего текущего психического состояния.",
     button: "Анализировать сон",
     buttonLoading: "Анализ…",
-    resultTitle: "Результат интерпретации сна",
+    resultTitle: "Результат интерпретации сна ИИ",
     resultPlaceholder:
       "Введите сон выше и нажмите «Анализировать сон». Результат появится здесь.",
     chars: (n: number) => `${n} симв.`,
@@ -270,9 +264,9 @@ const localeContent = {
   },
   fr: {
     label: "Français",
-    title: "Interprétation de vos rêves avec soin",
+    title: "L'IA interprète vos rêves avec soin",
     description:
-      "Où que vous soyez, à tout moment. Notez le rêve que vous avez fait la nuit dernière, et nous déroulerons doucement ses symboles et émotions pour vous.",
+      "Où que vous soyez, à tout moment. Notez le rêve que vous avez fait la nuit dernière, et l'IA déroulera doucement ses symboles et émotions pour vous.",
     sectionTitle: "Écrivez votre rêve librement",
     hint: "Plus vous donnez de détails — quand, où, avec qui, ce que vous vous souvenez — plus l'analyse sera riche.",
     placeholder:
@@ -282,7 +276,7 @@ const localeContent = {
       "Les interprétations sont à titre indicatif uniquement, axées sur la compréhension de votre état d'esprit actuel.",
     button: "Analyser le rêve",
     buttonLoading: "Analyse en cours…",
-    resultTitle: "Résultat d'interprétation du rêve",
+    resultTitle: "Résultat d'interprétation du rêve par l'IA",
     resultPlaceholder:
       "Entrez votre rêve ci-dessus et appuyez sur « Analyser le rêve ». Votre résultat apparaîtra ici.",
     chars: (n: number) => `${n} caractères`,
@@ -290,54 +284,6 @@ const localeContent = {
       analyzeFailed: "La demande d'analyse a échoué.",
       noResult: "Impossible de charger le résultat.",
       network: "Une erreur réseau s'est produite.",
-    },
-  },
-  de: {
-    label: "Deutsch",
-    title: "Ihre Träume einfühlsam gedeutet",
-    description:
-      "Egal wo Sie sind, egal zu welcher Zeit. Beschreiben Sie Ihren Traum der letzten Nacht, und wir werden Symbole und Emotionen behutsam für Sie entschlüsseln.",
-    sectionTitle: "Beschreiben Sie Ihren Traum ganz frei",
-    hint: "Je mehr Details – wann, wo, mit wem und an welche Szenen Sie sich erinnern – desto reichhaltiger wird die Analyse.",
-    placeholder:
-      "(Beispiel) Gegen 3 Uhr morgens ging ich allein durch einen endlosen violetten Wald. Goldene Flammen stiegen langsam zwischen den Bäumen auf, und von weitem hörte ich jemanden meinen Namen rufen...",
-    badge: "Mehrsprachige Eingabe möglich",
-    disclaimer:
-      "Deutungen dienen nur als Referenz und konzentrieren sich darauf, Ihren aktuellen Geisteszustand zu verstehen.",
-    button: "Traum analysieren",
-    buttonLoading: "Analyse läuft…",
-    resultTitle: "Ergebnis der Traumdeutung",
-    resultPlaceholder:
-      "Geben Sie oben Ihren Traum ein und klicken Sie auf 'Traum analysieren'. Das Ergebnis wird hier angezeigt.",
-    chars: (n: number) => `${n} Zeichen`,
-    errors: {
-      analyzeFailed: "Analyse-Anfrage fehlgeschlagen.",
-      noResult: "Ergebnis konnte nicht geladen werden.",
-      network: "Ein Netzwerkfehler ist aufgetreten.",
-    },
-  },
-  hi: {
-    label: "हिन्दी",
-    title: "आपके सपनों की गहराई से व्याख्या",
-    description:
-      "आप कहीं भी हों, किसी भी समय। पिछली रात आपने जो सपना देखा था उसे लिखें, और हम आपके लिए उसके प्रतीकों और भावनाओं को सहजता से समझाएंगे।",
-    sectionTitle: "अपना सपना खुलकर लिखें",
-    hint: "जितना अधिक विवरण—कब, कहाँ, आप किसके साथ थे, और आपको क्या याद है—उतना ही बेहतर विश्लेषण होगा।",
-    placeholder:
-      "(उदाहरण) सुबह 3 बजे के आसपास मैं एक अंतहीन बैंगनी जंगल में अकेला चल रहा था। पेड़ों के बीच से सुनहरी लपटें धीरे-धीरे उठ रही थीं, और मैंने दूर से किसी को अपना नाम पुकारते सुना...",
-    badge: "बहुभाषी इनपुट",
-    disclaimer:
-      "व्याख्या केवल संदर्भ के लिए है, जिसका उद्देश्य आपकी वर्तमान मानसिक स्थिति को समझना है।",
-    button: "सपनों का विश्लेषण करें",
-    buttonLoading: "विश्लेषण हो रहा है...",
-    resultTitle: "सपना व्याख्या परिणाम",
-    resultPlaceholder:
-      "ऊपर अपना सपना दर्ज करें और 'सपनों का विश्लेषण करें' दबाएं। आपका परिणाम यहां दिखाई देगा।",
-    chars: (n: number) => `${n} वर्ण`,
-    errors: {
-      analyzeFailed: "विश्लेषण अनुरोध विफल रहा।",
-      noResult: "परिणाम लोड नहीं किया जा सका।",
-      network: "नेटवर्क त्रुटि हुई।",
     },
   },
 };
