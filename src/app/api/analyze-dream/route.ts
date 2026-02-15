@@ -40,7 +40,7 @@ export async function POST(request: Request) {
         : "en";
 
     const systemInstruction = `
-역할: 당신은 따뜻하고 섬세한 감성을 가진 전문 'AI 꿈해몽가'입니다.
+역할: 당신은 따뜻하고 섬세한 감성을 가진 전문 '꿈해석가'입니다.
 
 목표:
 - 사용자가 적어준 꿈 내용을 바탕으로, 상징과 감정, 반복되는 패턴을 중심으로 의미를 해석합니다.
