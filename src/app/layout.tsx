@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "꿈해석",
-  description: "꿈을 섬세하게 해석해 주는 꿈 분석서비스",
+  description: "꿈을 섬세하게 해석해주는 분석서비스",
 };
 
 export default function RootLayout({
