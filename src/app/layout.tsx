@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "AI 꿈해몽",
-  description: "AI가 해석해 주는 꿈 분석 웹 앱",
+  title: "꿈해석",
+  description: "꿈을 섬세하게 해석해 주는 꿈 분석서비스",
 };
 
 export default function RootLayout({
